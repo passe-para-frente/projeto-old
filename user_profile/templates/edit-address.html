@@ -1,0 +1,54 @@
+{% extends 'header-edit.html' %}
+{% load static %}
+
+{% block header %}
+<div class="edit-address-form">
+    {%if success_message%}
+    <h1>Seus dados foram atualizados com sucesso</h1>
+    {%endif%}
+    <form method="POST">
+        <h3>Editar Endereco</h3>
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="save-edit-btn">
+            <button type="submit" class="small-btn" class="submit">salvar</button>
+        </div>
+    </form>
+    <div class="search-cep-modal">
+        <div class="modal">
+            <div class="modal-close">
+                <div>
+                    <img src="{% static 'images/close-icon.png' %}" alt="">
+                </div>
+                <div>
+                    <h2>Cep</h2>
+                </div>
+            </div>
+
+            <form class="form-search-cep">
+                <div>
+                    <div class="inputs">
+                        <label>Digite seu estado</label>
+                        <input type="text" maxlength="2" required>
+                    </div>
+                    <div class="inputs">
+                        <label>Digite sua cidade</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <label>Digite o nome da sua rua (Sem o número)</label>
+                    <input type="text" required>
+                </div>
+            </form>
+            <div class="error-cep">
+                <span>Endereço não encontrado ou inválido</span>
+            </div>
+
+            <div class="search-btn">
+                <button>Pesquisar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

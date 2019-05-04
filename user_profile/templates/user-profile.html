@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="user-profile">
+    <div class="container">
+        <div class="icon-profile">
+            <div class="type-profile">
+                {% if request.user.type == 'COMPANY' %}
+                <span>PJ</span>
+                {% elif request.user.type == 'PERSON' %}
+                <span>PF</span>
+                {% elif request.user.type == 'SCHOOL' %}
+                <span>ES</span>
+                {% endif %}
+
+            </div>
+            <div class="profile">
+                <img src="{% static 'images/user-icon.svg' %}" alt="">
+            </div>
+        </div>
+        <div class="info-profile">
+            <p>{{ request.user.name }}</p>
+            <p>{{ request.user.address.city }} - <span>{{ request.user.address.state }}</span></p>
+        </div>
+        <div class="btn-profile">
+            <a href="/perfil/senha"><button class="small-btn">editar</button></a>
+            <a href="/logout"><button class="small-btn {{edit}}">sair</button></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

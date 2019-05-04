@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="edit-profile">
+    <div class="container">
+        <div class="icon-profile">
+            <div class="type-profile">
+                {% if request.user.type == 'COMPANY' %}
+                <span>PJ</span>
+                {% elif request.user.type == 'PERSON' %}
+                <span>PF</span>
+                {% elif request.user.type == 'SCHOOL' %}
+                <span>ES</span>
+                {% endif %}
+            </div>
+            <div class="profile">
+                <img src="{% static 'images/user-icon.svg' %}" alt="">
+            </div>
+            <div class="edit-links">
+                <a href="/perfil/senha" id="edit-user">editar usuário</a>
+                <a href="/perfil/dados" id="edit-data">editar dados cadastrais</a>
+                <a href="/perfil/endereco" id="edit-address">editar endereço</a>
+            </div>
+        </div>
+
+        {% block header %} {% endblock %}
+
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'header-edit.html' %}
+{% load static %}
+
+{% block header %}
+<div class="edit-user-form">
+    {%if success_message%}
+    <h1>Seus dados foram atualizados com sucesso</h1>
+    {%endif%}
+    <form method="POST">
+        <h3>Editar Usuário</h3>
+        {% csrf_token %}
+        <p>
+            <label for=""></label>
+            {{form.as_p}}
+        </p>
+        <div class="save-edit-btn">
+            <button type="submit" class="small-btn">salvar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
