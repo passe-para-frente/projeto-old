@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="user-data-register">
+    <div class="register-header-desktop">
+        <h2>Cadastro</h2>
+    </div>
+    <div class="container register">
+      {% if messages %}
+        {% for message in messages %}
+            <p class="message">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+        <form class="user-data-form" method="POST">
+          {% csrf_token %}
+            <div class="register-steps">
+                <div>
+                    <div class="line"></div>
+                    <div class="step-circle"></div>
+                    <div class="step-circle step-in"></div>
+                    <div class="step-circle"></div>
+                </div>
+                <div>
+                    <span style="color: #cccccc">usuário</span>
+                    <span>dados básicos</span>
+                    <span style="color: #cccccc">endereço</span>
+                </div>
+            </div>
+
+            {% if request.user.type != 'SCHOOL' %}
+            <div class="select-user-type">
+                <label id="check_company" class="checkbox">Pessoa Juridica
+                    <input type="radio" name="user_type" value="COMPANY">
+                    <span class="checkmark"></span>
+                </label>
+                <label id="check_person" class="checkbox">Pessoa Fisica
+                    <input type="radio" name="user_type" value="PERSON">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            {% endif %}
+            {{form.as_p}}
+            <div class="btn-submit first-step-form">
+                <button class="next arrow-r" type="submit">
+                    <span>Próximo</span>
+                    <img src="{% static 'images/seta-d.svg'%}" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

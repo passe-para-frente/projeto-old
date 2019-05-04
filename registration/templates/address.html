@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="address-register">
+    <div class="register-header-desktop">
+        <h2>Cadastro</h2>
+    </div>
+    <div class="container register">
+        <form class="address-form" method="POST" action="{% url 'register_address' %}">
+          {% csrf_token %}
+            <div class="register-steps">
+                <div>
+                    <div class="line"></div>
+                    <div class="step-circle"></div>
+                    <div class="step-circle"></div>
+                    <div class="step-circle step-in"></div>
+                </div>
+                <div>
+                    <span style="color: #cccccc">usuário</span>
+                    <span style="color: #cccccc">dados básicos</span>
+                    <span>endereço</span>
+                </div>
+                <div id="error">
+
+                </div>
+            </div>
+            {{form.as_p}}
+            <div class="btn-submit">
+                <button class="next arrow-l">
+                    <span>Voltar</span>
+                    <img src="{% static 'images/seta-e.svg'%}" alt="">
+                </button>
+
+                <button class="next arrow-r" type="submit" id="submit-address">
+                    <span>Próximo</span>
+                    <img src="{% static 'images/seta-d.svg'%}" alt="">
+                </button>
+            </div>
+        </form>
+        <div class="search-cep-modal">
+            <div class="modal">
+                <div class="modal-close">
+                    <div>
+                        <img src="{% static 'images/close-icon.png' %}" alt="">
+                    </div>
+                    <div>
+                        <h2>Cep</h2>
+                    </div>
+                </div>
+
+                <form class="form-search-cep">
+                    <div>
+                        <div class="inputs">
+                            <label>Digite seu estado</label>
+                            <input type="text" maxlength="2" required>
+                        </div>
+                        <div class="inputs">
+                            <label>Digite sua cidade</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <label>Digite o nome da sua rua (Sem o número)</label>
+                        <input type="text" required>
+                    </div>
+                </form>
+                <div class="error-cep">
+                    <span>Endereço não encontrado ou inválido</span>
+                </div>
+
+                <div class="search-btn">
+                    <button class="big-btn">Pesquisar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
