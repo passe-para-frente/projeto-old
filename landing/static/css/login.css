@@ -1,0 +1,81 @@
+.login .social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .social-btn div{
+    margin-bottom: 2%;
+}
+
+.login .social-btn .fb-icon{
+    width: 15px;
+}
+
+.login > .container.register form > p {
+    text-align: center;
+}
+
+.login .donate-form-inputs {
+    width: 100%;
+}
+
+.login .donate-form-inputs input {
+    background-color: #EFEFEF;
+}
+
+.login .select-user-type {
+    justify-content: flex-start;
+}
+
+.login .login-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.login .login-btn button {
+    background-color: #ff9900;
+}
+
+.login .go-register {
+    display: flex;
+    justify-content: center;
+}
+
+.login .go-register p {
+    margin: 0;
+}
+
+.login .go-register p > a {
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media screen and (max-width:1024px) { 
+    .login .social-btn { 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+    
+    .login .social-btn { 
+        margin-top: 50px; 
+    } 
+    
+    .login .social-btn button { 
+        margin: 10px 0 0 0; 
+        width: 100%;
+    } 
+    
+    .login .donate-form-inputs input { 
+        background-color: #ffffff; 
+    } 
+    
+    .login .login-btn { 
+        display: flex; 
+        justify-content: 
+        center; 
+        margin: 50px 0; 
+    } 
+}

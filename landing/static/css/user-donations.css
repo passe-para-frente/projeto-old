@@ -1,0 +1,76 @@
+.user-donations {
+    padding: 100px 0;
+}
+
+.user-donations .donations-list .modal {
+    width: auto;
+    padding: 50px 20px 20px 50px;
+    margin: 30px 0;
+}
+
+.user-donations .donations-list .modal .confirm-school-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-donations .donations-list .modal .confirm-school-name span:first-child {
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+.user-donations .donations-list .modal .confirm-school-name span:last-child {
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.user-donations .donations-list .list-itens {
+    margin-top: 20px;
+    font-size: 10pt;
+}
+
+.user-donations .donations-list .confirm-delivery span{
+    font-size: 10pt;
+}
+
+.user-donations .donations-list .dropdown{
+    position: relative;
+}
+.user-donations .donations-list .dropdown-content{
+    display: none;
+    z-index: 1;
+    overflow: auto
+}
+
+.show{
+    display: block !important;
+}
+
+.user-donations .donations-list .arrow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.user-donations .donations-list .arrow img {
+    width: 30px;
+    cursor: pointer;
+}
+.user-donations .descricao{
+    list-style: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+@media screen and (min-width:1024px){
+    .user-donations {
+        padding: 50px 0;
+    }
+
+    .user-donations .donations-list {
+        height: 100%;
+        padding: 0 2%;
+    }
+}

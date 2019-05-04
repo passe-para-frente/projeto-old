@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="confirm-donation">
+    <div class="register-header-desktop">
+        <h2>Confirmar Doação</h2>
+    </div>
+
+    <div class="container register">
+        <form class="confirm-form" method="POST">
+            {% csrf_token %}
+            <div class="register-steps">
+                <div>
+                    <div class="line"></div>
+                    <div class="step-circle"></div>
+                    <div class="step-circle"></div>
+                    <div class="step-circle step-in"></div>
+                </div>
+                <div>
+                    <span style="color: #cccccc">adicionar doação</span>
+                    <span style="color: #cccccc">selecionar escola</span>
+                    <span>confirmar doação</span>
+                </div>
+            </div>
+
+            <div class="confirm-data">
+                <h3>Resumo</h3>
+                <div class="modal">
+                    <div class="confirm-school-name">
+                        <div>
+                            <span>{{donation.school.name}}</span>
+                        </div>
+                        <span>{{donation.created_at}}</span>
+                    </div>
+                    <div class="confirm-list-itens">
+                        {% for item in items %}
+                        <div class="item">
+                            <div>
+                                <span>{{item}}</span>
+                                <span>x{{item.quantity}}</span>
+                            </div>
+                            {% if count_items > 1 %}
+                            <div>
+                                <a href="{% url 'donation:delete_item' donation.id item.id %}">
+                                    <img src="{% static 'images/close-icon.png' %}" alt="">
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="confirm-delivery">
+                        {% if donation.delivery == 'DONOR' %}
+                        <span>Levar pessoalmente</span>
+                        {% elif donation.delivery == 'SCHOOL' %}
+                        <span>Quero que retirem</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="btn-submit">
+                <a href="{%url 'donation:select_school' donation.id%}" class="next arrow-l">
+                    <span>Voltar</span>
+                    <img src="{% static 'images/seta-e.svg'%}" alt="">
+                </a>
+                <button class="next arrow-r" type="submit">
+                    <span>Finalizar</span>
+                    <img src="{% static 'images/seta-d.svg'%}" alt="">
+                </button>
+            </div>
+        </form>
+
+        <div class="confirm-data-modal">
+            <div class="modal">
+                <img src="{% static 'images/check-icon.svg' %}" alt="">
+                <p>Sua doação foi <br>concluida com sucesso!</p>
+                <p>Acompanhe sua doação na aba <br><a href="/">"Minhas Doações"</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

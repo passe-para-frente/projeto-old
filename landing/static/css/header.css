@@ -1,0 +1,60 @@
+
+.header-desktop {
+    display: none;
+}
+
+.header-mobile {
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #CCC;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-mobile > h1, h2 {
+    margin: 20px 0;
+}
+
+.header-mobile .header-back img {
+    width: 20px;
+}
+
+.header-mobile .header-profile > a > img {
+    width: 30px;
+}
+
+@media (min-width: 768px) {
+    .header-mobile {
+        display: none;
+    }
+
+    .header-desktop {
+        background-color: #48A333;
+        border: none;
+        box-sizing: border-box;
+        display: flex;
+        padding: 20px 5%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .header-desktop > .menu {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header-desktop > .menu > a h1 {
+        margin: 0;
+        color: #FFF;
+    }
+}

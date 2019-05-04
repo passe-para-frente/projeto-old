@@ -1,0 +1,39 @@
+.section-main-success-page{
+    height: 49rem;
+}
+
+.section-main-success-page > .div-main-success-page{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    text-align: center;
+}
+.section-main-success-page > .div-main-success-page > .modal-success-page{
+    width: 100%;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    box-shadow: 3px 5px #E6E5E5;
+    color: black;
+}
+.section-main-success-page > .div-main-success-page > .modal-success-page > .list-items-success-page{
+    margin-top: 2%;
+    padding-bottom: 1%;
+}
+.section-main-success-page > .div-main-success-page div ul{
+    padding: 0;
+}
+.section-main-success-page > .div-main-success-page div ul li{
+    list-style: none;
+}
+.section-main-success-page > .div-main-success-page button{
+    background-color: #ff9900;
+}
+.section-main-success-page > .div-main-success-page > .modal-success-page > .school-and-date-success-page{
+    margin-bottom: 2%;
+    padding-top: 2%;
+}
+.section-main-success-page > .div-main-success-page > .modal-success-page > .school-and-date-success-page span{
+    font-size: 10pt;
+    margin-right: 2%;
+    margin-left: 2%;
+}

@@ -1,0 +1,11 @@
+/* Esconder RadioBtn Doador/Escola */
+section.user-register .container.register form > p > label[for=id_type_0], .user-register form > ul {
+    display: none;
+}
+
+.user-register form > ul.errorlist {
+    display: block;
+    color: tomato;
+    list-style: none;
+    padding: 0;
+}

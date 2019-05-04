@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<script>
+    const materials = {{ materials | safe }};
+    const sports = {{ sports | safe }};
+</script>
+
+<section class="add-material-donation">
+    <div class="register-header-desktop">
+        <h2>Cadastro Doações</h2>
+    </div>
+
+    <div class="container register">
+        <form class="add-material-form" method="POST">
+            {% csrf_token %}
+            <div class="register-steps">
+                <div>
+                    <div class="line"></div>
+                    <div class="step-circle step-in"></div>
+                    <div class="step-circle"></div>
+                    <div class="step-circle"></div>
+                </div>
+                <div>
+                    <span>adicionar doação</span>
+                    <span style="color: #cccccc">selecionar escola</span>
+                    <span style="color: #cccccc">confirmar doação</span>
+                </div>
+            </div>
+
+            <div class="add-inputs">
+                {{form.material}}
+                <p>{{form.non_field_errors}}</p>
+                <p class="container-select">
+                    {{form.category.errors}}
+                    {{form.category}}
+                </p>
+                <div class="sport">
+                    {{form.sport.errors}}
+                    {{form.sport_name}}
+                    {{form.sport}}
+                    <ul class="sport autocomplete"></ul>
+                </div>
+                <div>
+                    {{form.name.errors}}
+                    {{form.name}}
+                    <ul class="material autocomplete"></ul>
+                </div>
+                <div class="no-wrap">
+                    <p class="donation-number-itens">
+                        <img id="sub-icon" src="{% static 'images/menos.png' %}" alt="">
+                        {{form.quantity.errors}}
+                        {{form.quantity}}
+                        <img id="add-icon" src="{% static 'images/mais.png' %}" alt="">
+                    </p>
+                    <p class="container-select donation-material-state">
+                        {{form.condition}}
+                    </p>
+                </div>
+                <p>
+                    {{form.description}}
+                </p>
+                <div class="add-another-donation">
+                    <label class="checkbox">Adicionar outra doação
+                        <!-- <input checked type="radio" name="user_type" value="PERSON"> -->
+                        {{form.add_another_item}}
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="btn-submit first-step-form">
+                <button class="next arrow-r" type="submit">
+                    <span>Próximo</span>
+                    <img src="{% static 'images/seta-d.svg'%}" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

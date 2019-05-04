@@ -1,0 +1,412 @@
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Asap', sans-serif;
+    font-weight: 400;
+    font-size: 14pt;
+}
+
+section {
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+button, .btn {
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 48px;
+    font-weight: 600;
+    font-size: 10pt;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+input, textarea {
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    height: 36px;
+    padding-left: 5px;
+}
+
+::placeholder {
+    font-family: 'Roboto', sans-serif
+}
+
+textarea {
+    resize: none;
+    padding-top: 5px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 10pt;
+}
+
+::placeholder {
+    font-family: 'Asap', sans-serif;
+    font-size: 11pt;
+}
+
+/* Select Inputs W3Schools */
+/*the container must be positioned relative:*/
+.container-select {
+    position: relative;
+}
+
+.container-select select {
+    display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+    background-color: white;   
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 18px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #48A333 transparent transparent transparent;
+}
+
+/*style the items (options), including the selected item:*/
+.select-selected {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 11pt;
+    color: #838383;
+}
+
+
+.select-items div:first-child {
+    display: none;
+}
+
+.select-items div {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    height: 35px;
+    border-radius: 1px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 10pt;
+    color: #838383;
+}
+
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 0 1px 1px 2px #b5b4b4;
+    border-radius: 3px;
+}
+
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;  
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Auxiliares */
+
+/* Checkbox */
+.checkbox {
+    position: relative;
+    padding-left: 30px;
+    font-size: 10pt;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkbox input:checked ~ .checkmark {
+    background-color: #48A506;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox .checkmark:after {
+    left: 4px;
+    bottom: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1pt solid #48A333;
+    border-radius: 3px;
+  }
+  /* End */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.text {
+    margin: 15px 40px;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
+
+.modal {
+    width: 90%;
+    margin: auto;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    box-shadow: 3px 5px #E6E5E5;
+    color: black;
+}
+
+.modal-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin: 0;
+}
+
+.modal p {
+    margin: 40px 0
+}
+
+.big-btn {
+    width: 295px;
+}
+
+.small-btn {
+    width: 148px;
+}
+
+/* Header Mobile */
+.header-top-mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 5000;
+}
+
+.header-top-mobile  h2 {
+    margin: 0;
+    font-size: 12pt;
+}
+
+/* Menu mobile  */
+.menu ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #666666;
+}
+
+.menu img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.menu ul > a {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: #666666;
+    font-size: 12pt;
+    font-weight: 600;
+    text-transform: lowercase;  
+}
+
+/* Show links not logged user */
+.menu .link-nlogin {
+    display: inline;
+}
+
+/* Menu Logged */
+.menu-drop-down {
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.menu-drop-down > img {
+    display: none;
+}
+
+.itens-drop-down {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.menu-drop-down .itens-drop-down > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666666;
+}
+
+.menu-drop-down .itens-drop-down > a div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-drop-down .itens-drop-down > a {
+    color: black;
+    margin: auto;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 10pt;
+}
+
+.menu-drop-down .itens-drop-down > a:first-child:hover {
+    border-bottom: 0;
+}
+
+.menu-drop-down .itens-drop-down > a:hover {
+    border-bottom: 0.5px solid #ccc;
+    transition: 3s;
+}
+
+@media screen and (min-width:768px) {
+    h1, h2 {
+        margin-bottom: 80px;
+    }
+
+    .text {
+        text-align: left;
+        -moz-text-align-last: inherit;
+        text-align-last: inherit;
+    }
+
+    /* Menu Desktop */
+    .header-top-mobile {
+        display: none;
+    }
+
+    .menu ul a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #ffffff;
+    }
+
+    /* Menu Logged */
+    .menu-drop-down {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-left: 10px;
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+    }
+    
+    .menu-drop-down > img {
+        display: inline;
+    }
+    
+    .itens-drop-down {
+        display: none;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 250px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        border-radius: 5px;
+        padding: 20px 0;
+        box-shadow: 3px 5px #E6E5E5;
+    }
+
+    .itens-drop-down > a:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 48px;
+        border-radius: 5px;
+        background-color: #ff9900;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;  
+    }
+
+    .itens-drop-down img {
+        display: none;
+    }
+
+    .header-top-mobile img {
+        display: none;
+    }
+
+    .modal{
+      width: 40%;
+    }
+}

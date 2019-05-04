@@ -1,0 +1,71 @@
+/* Schools Modal */
+
+/* Scroll bar modal*/
+/* width */
+.modal-container ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #E6E5E5;
+}
+
+/* Track */
+.modal-container ::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+ 
+/* Handle */
+.modal-container ::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 30px;
+}
+
+/* Handle on hover */
+.modal-container ::-webkit-scrollbar-thumb:hover {
+    background: #d8d2d2a6; 
+}
+
+
+.modal-container {
+    display: none;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 9998;
+    bottom: 40%;
+}
+
+.modal-close img {
+    width: 20px;
+}
+
+.modal-container .modal-close {
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.modal-container .modal-close > div:nth-child(1){
+    width: 85%
+}
+
+.modal-container h2 {
+    font-size: 12pt;
+    color: #ff9900;
+}
+
+.list {
+    height: 30vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 10pt;
+    padding: 10px 15px;
+    margin: 0 10px;
+}
+
+.list span {
+    margin-bottom: 15px;
+}

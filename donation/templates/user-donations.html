@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<section class="user-donations">
+    {%if user_type != 'SCHOOL'%}
+    <div class="register-header-desktop">
+        <h2>Minhas doações</h2>
+    </div>
+    {%endif%}
+    {%if user_type == 'SCHOOL'%}
+    <div class="register-header-desktop">
+        <h2>Doações recebidas</h2>
+    </div>
+    {%endif%}
+    <div class="container register">
+        <!-- SE FOR DOADOR -->
+        <div class="donations-list">
+            {%if user_type != 'SCHOOL'%}
+            {%for donation in donations%}
+            <div class="modal">
+                <div class="confirm-school-name">
+                    <span>Para: {{donation.school.name}}</span>
+                    <span>{{donation.created_at}}</span>
+                </div>
+                <div>
+                    {{donation.item_quantity}}
+                    
+                    {% if donation.item_quantity > 1 %}
+                      itens
+                    {% else %}
+                      item
+                    {% endif %}
+                </div>
+
+                {% if donation.delivery == 'DONOR' %}
+                <div class="confirm-delivery">
+                    <span>Levar pessoalmente</span>
+                </div>
+                {% elif donation.delivery == 'SCHOOL' %}
+                <div class="confirm-delivery">
+                    <span>Quero que retirem</span>
+                </div>
+                {% endif %}
+                <div class="dropdown">
+                    <div class="arrow">
+                        <img src="{% static 'images/arrow-down-icon.png' %}" alt="">
+                    </div>
+                    <div class="dropdown-content">
+                        <ul class="list-itens">
+                            {% for item in donation.items %}
+                            
+                            <li>{{item}} x{{item.quantity}}</li>
+                            
+                            {% if item.description %}
+                            <li class="descricao">Descrição: {{item.description}}</li>
+                            {% endif %}
+                            
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {%endif%}
+
+            <!-- CASO NÃO TENHA DOACÃO -->
+            {%if donations_count == 0 and user_type != 'SCHOOL'%}
+            <p>
+                Até o momento você não fez nenhuma, assim que efetuar a primeira, poderá acompanhá-las por aqui.
+            </p>
+            {%endif%}
+
+            {%if donations_count == 0 and user_type == 'SCHOOL'%}
+            <p>
+                Até o momento você não recebeu nenhuma, assim que receber a primeira, poderá acompanhá-las por aqui.
+            </p>
+            {%endif%}
+
+            <!-- SE FOR ESCOLA -->
+            {%if user_type == 'SCHOOL'%}
+            {%for donation in donations%}
+            <div class="modal">
+                <div class="confirm-school-name">
+                    <span>De: {{donation.donor.name}}</span>
+                    <span>{{donation.created_at}}</span>
+                </div>
+                <div>
+                    {{donation.item_quantity}}
+                    
+                    {% if donation.item_quantity > 1 %}
+                      itens
+                    {% else %}
+                      item
+                    {% endif %}
+                </div>
+
+                <div class="arrow">
+                    <img src="{% static 'images/arrow-down-icon.png' %}" alt="">
+                </div>
+                <div class="dropdown-content">
+                    <ul class="list-itens">
+                        {% for item in donation.items %}
+                        <li>{{item.material.name}} x{{item.quantity}}</li>
+                        <li class="descricao">Descrição: {{item.description}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+            {%endif%}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

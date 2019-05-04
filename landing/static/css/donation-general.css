@@ -1,0 +1,9 @@
+section.add-material-donation .btn-submit.first-step-form {
+    justify-content: flex-end;
+}
+
+.container.register form .no-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

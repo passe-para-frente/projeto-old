@@ -1,0 +1,150 @@
+/* That selector is just to align the first button from the first step page to the end of the box */
+section.user-register > .container.register > form > .btn-submit.first-step-form {
+    justify-content: flex-end;
+}
+
+section.user-data-register > .container.register > .user-data-form > .btn-submit.first-step-form {
+    justify-content: flex-end;
+}
+
+.register-header-desktop {
+    display: none;
+    justify-content: flex-start;
+    height: 150px;
+    background-color: #666654;
+    color: white;
+    position: relative;
+    z-index: -2;
+    margin-top: 15px;
+}
+
+.register-header-desktop h2 {
+    padding: 2% 10%;
+}
+
+.container.register > form p {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-user-type {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-submit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.next {
+    background-color: white;
+    width: 50px;
+    border-radius:5px;
+}
+
+.next img {
+    width: 25px;
+}
+
+.next span {
+    display: none;
+}
+
+.arrow-r {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.arrow-l {
+    display: flex;
+    justify-content:  space-around;
+}
+
+.register-steps {
+    margin-top: 80px;
+}
+
+.register-steps > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 8pt;
+    position: relative;
+}
+
+.register-steps > div:nth-child(2) span {
+    margin: 10px 0 20px 0;
+
+}
+
+.step-circle.step-in {
+    background-color: #ff9900;
+    border: 0;
+}
+
+.step-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+    background-color: white;
+}
+
+.line {
+    height: 1px;
+    width: 65%;
+    background-color: #cccccc;
+    position: absolute;
+    z-index: -1;
+}
+
+@media screen and (min-width:1024px) {
+    .register-header-desktop {
+        display: flex;
+    }
+
+    .container.register {
+        border-radius: 5px;
+        background-color: #efefef;
+        margin: 0 10%;
+        position: relative;
+        bottom: 40px;
+        padding: 4%;
+        z-index: 1;
+    }
+
+    .container.register > form{
+        margin: 0 20%;
+    }
+
+    .line {
+        height: 1px;
+        width: 65%;
+        background-color: #cccccc;
+        position: absolute;
+    }
+
+    .register-steps {
+        margin-top: 10px
+    }
+
+    .next {
+        width: 40%;
+        background-color: #ff9900;
+        display: flex;
+        justify-content: center;
+    }
+
+    .next img {
+        display: none;
+    }
+
+    .next span {
+        display: inline;
+        line-height: 47px;
+        color: white;
+    }
+}

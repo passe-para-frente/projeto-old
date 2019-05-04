@@ -1,0 +1,68 @@
+.edit-profile {
+    padding: 100px 0;
+}
+
+.edit-profile .icon-profile{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin-top: 25px;
+    position: static;
+}
+
+.edit-profile .edit-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 10pt;
+}
+
+.edit-profile .edit-links a {
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.edit-profile .type-profile {
+    width: 30px;
+    height: 30px;
+    font-size: 10pt;
+}
+
+.edit-profile .profile {
+    width: 100px;
+    height: 100px;
+}
+
+.edit-profile .profile img{
+    width: 15%;
+}
+
+.edit-user-form, .edit-data-form, .edit-address-form  {
+    margin-top: 50px;
+}
+
+.edit-user-form h3, .edit-data-form h3, .edit-address-form h3 {
+    font-size: 12pt;
+    margin-bottom: 30px;
+}
+
+.edit-user-form > form p, .edit-data-form > form p, .edit-address-form > form p  {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-user-form p > label[for=id_type_0], .edit-user-form  ul#id_type {
+    display: none;
+}
+
+.save-edit-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.save-edit-btn button {
+    background-color: #ff9000;
+}

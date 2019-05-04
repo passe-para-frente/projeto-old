@@ -1,0 +1,126 @@
+.confirm-donation {
+    position: relative;
+}
+
+.confirm-donation .confirm-data .modal{
+    margin: 0;
+    padding: 20px;
+    width: auto;
+}
+
+.confirm-school-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.confirm-school-name > div > img {
+    width: 40px;
+}
+
+.confirm-school-name > span {
+    font-size: 8pt;
+}
+
+.confirm-school-name > div {
+    display: flex;
+    align-items: center;
+}
+
+.confirm-school-name > div > span{
+    margin-left: 30px;
+}
+
+.confirm-list-itens {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+.confirm-list-itens > .item {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px 0;
+}
+
+.confirm-list-itens img {
+    width: 15px;
+}
+
+.confirm-data .confirm-delivery {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.confirm-data .confirm-delivery span {
+    display: block;
+    width: 80%;
+}
+
+.confirm-donation .confirm-data-modal {
+    display: flex;
+    text-align: center;
+    position: fixed;
+    top: 140px;
+    left: 0;
+    width: 100%;
+}
+
+.confirm-donation .confirm-data-modal .modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
+    margin: 0 2%;
+}
+
+.confirm-donation .confirm-data-modal img {
+    width: 100px;
+}
+
+.confirm-donation .confirm-data-modal p {
+    margin-bottom: 0;
+}
+
+.confirm-donation .confirm-data-modal p > a{
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff9900;
+}
+
+
+.confirm-donation .confirm-form > .btn-submit {
+    display: block;
+    width: 100%;
+}
+
+.confirm-donation .confirm-form > .btn-submit button.next.arrow-r {
+    margin: 0 auto;
+    background-color: #ff9900;
+    width: 50%;
+}
+
+.confirm-donation .confirm-form > .btn-submit button.next.arrow-r img {
+    display: none;
+}
+   
+.confirm-donation .confirm-form > .btn-submit button.next.arrow-r > span {
+    display: block;
+}
+
+@media screen and (min-width:1024px) {
+    .confirm-donation .confirm-data-modal .modal {
+        margin: 0 20%;
+    }
+
+    .confirm-donation .confirm-form > .btn-submit {
+        display: flex;
+    }
+    
+    .confirm-donation .confirm-form > .btn-submit button.next.arrow-r {
+        margin: 0;
+        width: 40%;
+    }
+}

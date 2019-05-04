@@ -1,0 +1,106 @@
+.address-register {
+    position: relative;
+}
+
+.search-cep {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 10pt;
+}
+
+.search-cep .search {
+    color: #ff9900;
+    margin-left: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-cep-modal {
+    display: none; 
+    position: fixed;
+    width: 100%;
+    top: 90px;
+    left: 0;
+    z-index: 2000;
+}
+
+.search-cep-modal > .modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-cep-modal .modal-close {
+    flex-direction: column;
+}
+
+.search-cep-modal .modal-close > div:nth-child(1) {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search-cep-modal .modal-close > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #ff9900;
+}
+
+.search-cep-modal .error-cep {
+    display: none;
+    justify-content: center;
+}
+
+.form-search-cep {
+    padding: 5%;
+}
+
+.form-search-cep input {
+    padding: 0;
+}
+
+.form-search-cep > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
+
+.form-search-cep > div:nth-child(1) > div {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.form-search-cep > div:nth-child(2) input {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.search-btn button{
+    background-color: #ff9900;
+    width: 200px;
+}
+
+@media screen and (min-width:1024px) {
+    .search-cep-modal {
+        justify-content: center;
+        
+    }
+
+    .search-cep-modal .modal {
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .search-cep-modal {
+        width: 90%;
+    }
+}

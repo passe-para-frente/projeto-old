@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+<section class="section-main-success-page">
+    <div class="div-main-success-page">
+        <p>Parabéns você acabou de fazer a seguinte doação:</p>
+        <div class="modal-success-page">
+            <div class="confirm-school-name school-and-date-success-page">
+                <span>Para: {{donation.school.name}}</span>
+                <span>{{donation.created_at}}</span>
+            </div>
+            {% if donation.delivery == 'DONOR' %}
+            <div class="confirm-delivery">
+                <span>Você prefere: Levar pessoalmente</span>
+            </div>
+            {% elif donation.delivery == 'SCHOOL' %}
+            <div class="confirm-delivery">
+                <span>Você prefere: Que retirem</span>
+            </div>
+            {% endif %}
+            <div class="list-items-success-page">
+                <span>Total de itens: {{donation.item_quantity}}</span>
+
+                <ul class="list-itens">
+                    {% for item in donation.items %}
+                    <li>{{item}} x{{item.quantity}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <p>Se quiser ver todas as suas doações é só clicar aqui:</p>
+        <a href="{%url 'donation:user_donations'%}">
+            <button>Minhas Doações</button>
+        </a>
+    </div>
+</section>
+{%endblock%}

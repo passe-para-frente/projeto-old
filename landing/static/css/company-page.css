@@ -1,0 +1,57 @@
+.company-about {
+    margin: 130px auto;
+    max-width: 100%;
+    text-align: center;
+    width: 400px;
+}
+
+.company-about h1 {
+    color: #ff9900;
+    font-size: 1.75rem;
+    margin: 10px 0;
+}
+
+.company-about > p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.company-about a > p {
+    background-color: #ff9900;
+    border-radius: 5px;
+    color: white;
+    margin: 0 auto;
+    padding: 5px;
+    width: 50%;
+}
+
+.company-about > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company-logo {
+    width: 25%;
+}
+
+@media (min-width: 768px) {
+    .company-about {
+        margin: 150px auto;
+        width: 70%;
+    }
+
+    .company-about h1 {
+        font-size: 2rem;
+    }
+
+    .company-about p {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+
+    .company-logo {
+        max-width: 200px;
+        width: 20%;
+    }
+}
